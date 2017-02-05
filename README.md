@@ -1,2 +1,2 @@
 # firefly
-basic structure, nodejs + redis
+basic structure, nodejs webservice through webpack
