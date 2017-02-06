@@ -26,8 +26,7 @@ module.exports = {
   module: {
     loaders: [{
         test: /\.css$/,
-        loader: 'style!css',
-        include: APP_PATH
+        loader: 'style!css'
       },
       {
         test: /\.js$/,
@@ -36,6 +35,25 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url?limit=15000'
+      }, {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=1&mimetype=application/font-woff'
+      }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=1&mimetype=application/font-woff2'
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=1&mimetype=application/octet-stream'
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+      }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=1&mimetype=image/svg+xml'
       }
     ]
   },
