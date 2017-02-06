@@ -26,7 +26,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loaders: ['style', 'css'],
+                loader: 'style!css',
                 include: APP_PATH
             },
             {
@@ -55,7 +55,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            
+
         }
     }
 };
