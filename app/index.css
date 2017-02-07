@@ -14,18 +14,11 @@ li {
   list-style: none;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font-size: 100%;
 }
 
-body,
-button,
-input,
-select,
-textarea {
+body, button, input, select, textarea {
   color: #2e2e2e;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
 }
@@ -48,7 +41,7 @@ textarea {
 }
 
 .user-input {
-  width: 80%  !important;
+  width: 80% !important;
   float: left;
   height: 20px;
   padding: 10px;
