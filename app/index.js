@@ -4,6 +4,8 @@ require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 var media = $('#danmuPlayer');
 
+
+
 // 封装播放器插件
 
 (function($) {
@@ -18,7 +20,9 @@ var media = $('#danmuPlayer');
   };
 
   // 原型功能
-  Plugin.prototype.init = function() {};
+  Plugin.prototype.init = function() {
+    console.log(111);
+  };
 
   // 暴露接口
   $.fn[pluginName] = function(options) {
@@ -36,3 +40,5 @@ var media = $('#danmuPlayer');
   };
 
 })(jQuery);
+
+media.danmuPlayer();
