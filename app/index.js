@@ -52,8 +52,19 @@ require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 }));
 
 
-var media = $('#danmuPlayer');
-// media.paused();
+var $media = $('#danmuPlayer');
+
+$media.on('timeupdate',function(e){
+  console.log(this.currentTime);
+});
+
+$media.on('play',function(){
+  console.log('It is play event');
+});
+
+$media.on('pause',function(){
+  console.log('It is pause event');
+});
 
 
 //弹幕功能
