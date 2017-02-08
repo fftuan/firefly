@@ -47,5 +47,54 @@ body, button, input, select, textarea {
   padding: 10px;
 }
 
+.display-danmu {
+  width: 900px;
+  height: 578px;
+  position: absolute;
+  z-index: 233;
+}
+
 
 /*播放器样式 end*/
+
+
+/*弹幕样式*/
+
+.danmu-text {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  color: #fff;
+  /*动画执行时间*/
+  animation: mymove 10s infinite;
+  -webkit-animation: mymove 10s infinite;
+  /*播放次数*/
+  animation-iteration-count:1;
+
+  /*Safari and Chrome*/
+}
+
+@keyframes mymove {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -10%;
+  }
+}
+
+@-webkit-keyframes mymove
+/*Safari and Chrome*/
+
+{
+  from {
+    left: 100%;
+  }
+  to {
+    left: -10%;
+  }
+}
+
+
+/*弹幕样式 end*/
