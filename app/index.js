@@ -56,9 +56,9 @@ var media = $('#danmuPlayer');
 //弹幕测试
 
 //当弹幕移动结束时将其移除
-$('#danmu1').on('animationend ', function(e) {
-  $(this).remove();
-});
+// $('#danmu1').on('animationend ', function(e) {
+//   $(this).remove();
+// });
 
 
 
@@ -72,10 +72,38 @@ $('#danmu1').on('animationend ', function(e) {
  */
 function danmuRoll(text, color, fontSize) {
   var $thisDanmu = $('<span class="danmu-text" style="color:' + color + '; font-size:' + fontSize + ';" >' + text + '</span>');
+  var randomNum = parseInt(Math.random() * 100, 10);
+  $thisDanmu.css('top', +randomNum + '%');
   $thisDanmu.on('animationend', function(e) {
     $(this).remove();
   });
   $('#displayDanmu').append($thisDanmu);
+};
+// debugger
+
+
+new danmuRoll('666', '#fff', '20px');
+new danmuRoll('666', '#fff', '30px');
+new danmuRoll('666', '#fff', '40px');
+new danmuRoll('6666', '#fff', '50px');
+
+var data = {
+  "damu": [{
+      "id": 1,
+      "text": "2333"
+    },
+    {
+      "id": "2",
+      "text": "66666"
+    },
+    {
+      "id": "3",
+      "text": "9999"
+    }
+  ]
 }
 
-new danmuRoll('6666', 'red', '40px');
+console.log(data);
+$.map(data,function(val){
+  console.log(val);
+});
