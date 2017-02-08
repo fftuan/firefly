@@ -38,6 +38,7 @@ body, button, input, select, textarea {
 .video-box {
   width: 900px;
   height: 650px;
+  background: #000;
 }
 
 .user-input {
@@ -63,8 +64,10 @@ body, button, input, select, textarea {
 }
 
 .danmu-text {
+  /*font-weight: bold;*/
   font-size: 24px;
   position: absolute;
+  white-space:nowrap;
   top: 50%;
   left: 100%;
   color: #fff;
@@ -74,8 +77,9 @@ body, button, input, select, textarea {
   /*播放次数*/
   -webkit-animation-iteration-count:1;
           animation-iteration-count:1;
-
-  /*Safari and Chrome*/
+  /*-webkit-text-stroke: 1px #000000;*/
+  -webkit-animation-timing-function:linear;
+          animation-timing-function:linear;
 }
 
 @keyframes mymove {
