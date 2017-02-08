@@ -47,18 +47,20 @@ body, button, input, select, textarea {
   padding: 10px;
 }
 
-.display-danmu {
-  width: 900px;
-  height: 578px;
-  position: absolute;
-  z-index: 233;
-}
+
 
 
 /*播放器样式 end*/
 
 
 /*弹幕样式*/
+.display-danmu {
+  width: 900px;
+  height: 578px;
+  position: absolute;
+  z-index: 233;
+  overflow: hidden;
+}
 
 .danmu-text {
   font-size: 24px;
@@ -70,7 +72,8 @@ body, button, input, select, textarea {
   animation: mymove 10s infinite;
   -webkit-animation: mymove 10s infinite;
   /*播放次数*/
-  animation-iteration-count:1;
+  -webkit-animation-iteration-count:1;
+          animation-iteration-count:1;
 
   /*Safari and Chrome*/
 }
