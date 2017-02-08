@@ -2,7 +2,7 @@
 require('./index.css');
 require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
-var media = $('#danmuPlayer');
+
 
 
 
@@ -51,15 +51,9 @@ var media = $('#danmuPlayer');
 
 }));
 
-// media.danmuPlayer();
 
-//弹幕测试
-
-//当弹幕移动结束时将其移除
-// $('#danmu1').on('animationend ', function(e) {
-//   $(this).remove();
-// });
-
+var media = $('#danmuPlayer');
+// media.paused();
 
 
 //弹幕功能
@@ -79,31 +73,29 @@ function danmuRoll(text, color, fontSize) {
   });
   $('#displayDanmu').append($thisDanmu);
 };
-// debugger
-
-
-new danmuRoll('666', '#fff', '20px');
-new danmuRoll('666', '#fff', '30px');
-new danmuRoll('666', '#fff', '40px');
-new danmuRoll('6666', '#fff', '50px');
 
 var data = {
-  "damu": [{
+  "danmu": [{
       "id": 1,
-      "text": "2333"
+      "text": "2333",
+      "color":"#fff",
+      "fontSize": "30px"
     },
     {
-      "id": "2",
-      "text": "66666"
+      "id": 2,
+      "text": "66666",
+      "color":"red",
+        "fontSize": "40px"
     },
     {
-      "id": "3",
-      "text": "9999"
+      "id": 3,
+      "text": "9999",
+      "color":"#fff",
+        "fontSize": "50px"
     }
   ]
 }
 
-console.log(data);
-$.map(data,function(val){
-  console.log(val);
+$.map(data.danmu,function(data){
+  danmuRoll(data.text,data.color,data.fontSize);
 });
