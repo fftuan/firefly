@@ -9,14 +9,14 @@ var media = $('#danmuPlayer');
 // 封装播放器插件
 
 (function(factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
-    } else {
-        factory(jQuery);
-    }
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports !== 'undefined') {
+    module.exports = factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
 
 }(function($) {
   var pluginName = 'danmuPlayer';
@@ -56,6 +56,26 @@ var media = $('#danmuPlayer');
 //弹幕测试
 
 //当弹幕移动结束时将其移除
-$('#danmu1').on('animationend ',function(e){
+$('#danmu1').on('animationend ', function(e) {
   $(this).remove();
 });
+
+
+
+//弹幕功能
+
+/*
+ * 配置参数
+ * text:文本
+ * color:字体颜色
+ * fontSize:字体大小
+ */
+function danmuRoll(text, color, fontSize) {
+  var $thisDanmu = $('<span class="danmu-text" style="color:' + color + '; font-size:' + fontSize + ';" >' + text + '</span>');
+  $thisDanmu.on('animationend', function(e) {
+    $(this).remove();
+  });
+  $('#displayDanmu').append($thisDanmu);
+}
+
+new danmuRoll('6666', 'red', '40px');
