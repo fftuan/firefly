@@ -8,7 +8,17 @@ var media = $('#danmuPlayer');
 
 // 封装播放器插件
 
-(function($) {
+(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof exports !== 'undefined') {
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(jQuery);
+    }
+
+}(function($) {
   var pluginName = 'danmuPlayer';
   // 默认参数配置
   var defaults = {};
@@ -21,7 +31,7 @@ var media = $('#danmuPlayer');
 
   // 原型功能
   Plugin.prototype.init = function() {
-    console.log(111);
+    console.log($('#danmuPlayer '));
   };
 
   // 暴露接口
@@ -39,6 +49,13 @@ var media = $('#danmuPlayer');
     });
   };
 
-})(jQuery);
+}));
 
-media.danmuPlayer();
+// media.danmuPlayer();
+
+//弹幕测试
+
+//当弹幕移动结束时将其移除
+$('#danmu1').on('animationend ',function(e){
+  $(this).remove();
+});
