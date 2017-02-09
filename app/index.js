@@ -1,6 +1,7 @@
 // 引入基本样式文件
 require('./index.css');
-require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+// require('../node_modules/bootstrap/dist/css/bootstrap.css');
+// 目前bs读取bug 正在调整，弹幕输入框和发送样式没有，但并不影响功能
 
 
 
@@ -52,8 +53,19 @@ require('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 }));
 
 
-var media = $('#danmuPlayer');
-// media.paused();
+var $media = $('#danmuPlayer');
+
+$media.on('timeupdate',function(e){
+  console.log(this.currentTime);
+});
+
+$media.on('play',function(){
+  console.log('It is play event');
+});
+
+$media.on('pause',function(){
+  console.log('It is pause event');
+});
 
 
 //弹幕功能
@@ -98,4 +110,11 @@ var data = {
 
 $.map(data.danmu,function(data){
   danmuRoll(data.text,data.color,data.fontSize);
+});
+
+//发送弹幕按钮
+$('#sendDanmu').on('click',function(){
+  var text = $('#danmuInput').val();
+  danmuRoll(text);
+  $('#danmuInput').empty();
 });
