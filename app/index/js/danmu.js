@@ -8,7 +8,7 @@
 module.exports = function(text, color, fontSize) {
   var $thisDanmu = $('<span></span>')
     .addClass('danmu-text')
-    .css({
+    .css({ 
       'color': color,
       'font-size': fontSize,
       'animation-play-state':'running'
