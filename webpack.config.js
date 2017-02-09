@@ -9,14 +9,13 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    app: path.resolve(APP_PATH, 'index.js'),
+    app: path.resolve(APP_PATH, 'index/index.js'),
     utils: ['jquery', 'lodash']
   },
   output: {
     path: BUILD_PATH,
     filename: '[name].js'
   },
-  // devtool: 'eval-source-map',
   devServer: {
     historyApiFallback: true,
     hot: true,
@@ -60,7 +59,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'firefly',
-      template: path.resolve(APP_PATH, 'index.html'),
+      template: path.resolve(APP_PATH, 'index/index.html'),
       chunks: ['app', 'utils'],
       inject: 'body'
     }),
