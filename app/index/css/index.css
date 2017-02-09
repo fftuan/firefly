@@ -49,12 +49,11 @@ body, button, input, select, textarea {
 }
 
 
-
-
 /*播放器样式 end*/
 
 
 /*弹幕样式*/
+
 .display-danmu {
   width: 900px;
   height: 578px;
@@ -67,7 +66,7 @@ body, button, input, select, textarea {
   /*font-weight: bold;*/
   font-size: 24px;
   position: absolute;
-  white-space:nowrap;
+  white-space: nowrap;
   top: 50%;
   left: 100%;
   color: #fff;
@@ -75,11 +74,14 @@ body, button, input, select, textarea {
   animation: mymove 10s infinite;
   -webkit-animation: mymove 10s infinite;
   /*播放次数*/
-  -webkit-animation-iteration-count:1;
-          animation-iteration-count:1;
-  /*-webkit-text-stroke: 1px #000000;*/
-  -webkit-animation-timing-function:linear;
-          animation-timing-function:linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  //线性播放
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  //视频暂停
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 @keyframes mymove {
