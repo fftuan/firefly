@@ -1,7 +1,6 @@
 // 引入基本样式文件
 require('./index.css');
-// require('../node_modules/bootstrap/dist/css/bootstrap.css');
-// 目前bs读取bug 正在调整，弹幕输入框和发送样式没有，但并不影响功能
+require('../node_modules/bootstrap/dist/css/bootstrap.css');
 
 
 
