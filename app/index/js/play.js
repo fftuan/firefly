@@ -1,3 +1,7 @@
+var danmuRoll = require('./danmu.js');
+// console.log(danmuRoll);
+
+
 // 封装播放器插件
 
 (function(factory) {
@@ -43,17 +47,56 @@
 
 }));
 
+var data = {
+  "danmu": [{
+      "id": 1,
+      "text": "2333",
+      "color": "#fff",
+      "fontSize": "30px",
+      "setTime":0.5
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "red",
+      "fontSize": "40px",
+      "setTime":1
+    },
+    {
+      "id": 3,
+      "text": "9999",
+      "color": "#fff",
+      "fontSize": "50px",
+      "setTime":1.5
+    }
+  ]
+}
+
+// $.map(data.danmu, function(data) {
+//   danmuRoll(data.text, data.color, data.fontSize);
+// });
+
 
 var $media = $('#danmuPlayer');
 
 $media.on('timeupdate',function(e){
   console.log(this.currentTime);
+  var time = this.currentTime;
+  $.map(data.danmu,function(data){
+    if(data.setTime > time){
+      // console.log('ok');
+      danmuRoll(data.text, data.color, data.fontSize);
+    }
+  });
+
 });
 
 $media.on('play',function(){
-  console.log('It is play event');
+  // console.log('It is play event');
+  $('#displayDanmu').find('span').css('animation-play-state','running');
 });
 
 $media.on('pause',function(){
-  console.log('It is pause event');
+  // console.log('It is pause event');
+  $('#displayDanmu').find('span').css('animation-play-state','paused');
 });
