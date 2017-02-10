@@ -15,7 +15,7 @@
  
  http://www.cnblogs.com/PeunZhang/p/5553574.html  proposed by 火乌日暗崩腾云 
 
- simple guide:   1. npm install 2. npm i 3.npm start  4.visit 127.0.0.1:8080 through web browser
+ simple guide:   1. npm install 2.npm start  3.visit 127.0.0.1:8080 through web browser
 
 -------
  
