@@ -8,13 +8,12 @@
 module.exports = function(text, color, fontSize) {
   var $thisDanmu = $('<span></span>')
     .addClass('danmu-text')
-    .css({ 
+    .css({
       'color': color,
       'font-size': fontSize,
       'animation-play-state':'running'
     })
     .text(text);
-
   var randomNum = parseInt(Math.random() * 100, 10);
   $thisDanmu.css('top', randomNum + '%');
   $thisDanmu.on('animationend', function(e) {

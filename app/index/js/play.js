@@ -41,7 +41,7 @@ var danmuRoll = require('./danmu.js');
       };
       if (typeof options === 'string') {
         data[options].apply(data, args);
-      };
+      }
     });
   };
 
@@ -72,20 +72,17 @@ var data = {
   ]
 }
 
-// $.map(data.danmu, function(data) {
-//   danmuRoll(data.text, data.color, data.fontSize);
-// });
-
 
 var $media = $('#danmuPlayer');
 
 $media.on('timeupdate',function(e){
-  console.log(this.currentTime);
+  //播放器进度条
   var time = this.currentTime;
+  //遍历数据
   $.map(data.danmu,function(data){
     if(data.setTime > time){
-      // console.log('ok');
       danmuRoll(data.text, data.color, data.fontSize);
+
     }
   });
 
