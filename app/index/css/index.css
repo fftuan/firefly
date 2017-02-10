@@ -56,7 +56,7 @@ body, button, input, select, textarea {
 
 .display-danmu {
   width: 900px;
-  height: 578px;
+  height: 617px;
   position: absolute;
   z-index: 233;
   overflow: hidden;
