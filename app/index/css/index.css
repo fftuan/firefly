@@ -1,26 +1,38 @@
 /*基础配置*/
 
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, lengend, button, input, textarea, th, td {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 input, select, label {
-  vertical-align: middle;
-  outline: none;
+    vertical-align: middle;
+    outline: none;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 button, input, select, textarea {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 body, button, input, select, textarea {
-  color: #2e2e2e;
-  font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
+    color: #2e2e2e;
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearfix {
+    *+height: 1%;
 }
 
 
@@ -30,22 +42,56 @@ body, button, input, select, textarea {
 /*播放器样式*/
 
 .content-box {
-  margin: 0 auto;
-  width: 1190px;
-  min-width: 1190px;
+    margin: 0 auto;
+    width: 1190px;
+    min-width: 1190px;
 }
 
 .video-box {
-  width: 900px;
-  height: 650px;
-  background: #000;
+    width: 900px;
+    height: 650px;
+    background: #000;
+    float: left;
 }
 
 .user-input {
-  width: 80% !important;
-  float: left;
-  height: 20px;
-  padding: 10px;
+    width: 80% !important;
+    float: left;
+    height: 20px;
+    padding: 10px;
+}
+
+.danmuchi-box {
+    width: 290px;
+    height: 650px;
+    float: left;
+    border: 1px solid #333;
+}
+
+.danmuchi-text {
+    width: 80%;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.danmuchi-time {
+    margin: 0;
+    width: 20%;
+    float: right;
+    border-left: 1px solid #333;
+}
+
+.danmuchi li {
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.input-box {
+    height: 100px;
+    width: 100%;
 }
 
 
@@ -55,54 +101,53 @@ body, button, input, select, textarea {
 /*弹幕样式*/
 
 .display-danmu {
-  width: 900px;
-  height: 617px;
-  position: absolute;
-  z-index: 233;
-  overflow: hidden;
+    width: 900px;
+    height: 617px;
+    position: absolute;
+    z-index: 233;
+    overflow: hidden;
 }
 
 .danmu-text {
-  /*font-weight: bold;*/
-  font-size: 24px;
-  position: absolute;
-  white-space: nowrap;
-  top: 50%;
-  left: 100%;
-  color: #fff;
-  /*动画执行时间*/
-  animation: mymove 10s infinite;
-  -webkit-animation: mymove 10s infinite;
-  /*播放次数*/
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  //线性播放
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  //视频暂停
-  animation-play-state: paused;
-  -webkit-animation-play-state: paused;
+    font-size: 24px;
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 100%;
+    color: #fff;
+    /*动画执行时间*/
+    animation: mymove 10s infinite;
+    -webkit-animation: mymove 10s infinite;
+    /*播放次数*/
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    //线性播放
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    //视频暂停
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
 }
 
 @keyframes mymove {
-  from {
-    left: 100%;
-  }
-  to {
-    left: -10%;
-  }
+    from {
+        left: 100%;
+    }
+    to {
+        left: -10%;
+    }
 }
 
 @-webkit-keyframes mymove
 /*Safari and Chrome*/
 
 {
-  from {
-    left: 100%;
-  }
-  to {
-    left: -10%;
-  }
+    from {
+        left: 100%;
+    }
+    to {
+        left: -10%;
+    }
 }
 
 
