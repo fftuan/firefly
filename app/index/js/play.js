@@ -116,6 +116,15 @@ $media.on('timeupdate',function(e){
 //
 // });
 
+//弹幕池
+$.map(data.danmu,function(data){
+  var thisDanmu = $('<li class="clearfix">'+
+                      '<p class="danmuchi-text">'+ data.text +'</p><p class="danmuchi-time">'+ data.setTime +'</p>'+
+                    '</li>');
+  $('#danmuchi').append(thisDanmu);
+});
+
+//播放器事件
 $media.on('play',function(){
   console.log('It is play event');
   $('#displayDanmu').find('span').css('animation-play-state','running');
