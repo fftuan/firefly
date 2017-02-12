@@ -17,8 +17,8 @@ module.exports = function(text, color, fontSize) {
   var randomNum = parseInt(Math.random() * 100, 10);
   if(randomNum < 5){
     randomNum = 5;
-  } else if(randomNum > 95){
-    randomNum = 95
+  } else if(randomNum > 90){
+    randomNum = 90
   }
   $thisDanmu.css('top', randomNum + '%');
   $thisDanmu.on('animationend', function(e) {
