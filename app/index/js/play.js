@@ -84,7 +84,7 @@ window.data = {
   ]
 }
 
-var $media = $('#danmuPlayer');
+window.$media = $('#danmuPlayer');
 
 $media.on('timeupdate',function(e){
   //播放器进度条
@@ -94,7 +94,6 @@ $media.on('timeupdate',function(e){
     if(data.setTime < time && data.played == 0){
       danmuRoll(data.text, data.color, data.fontSize);
       data.played = 1;
-      console.log(data.id);
     }
   });
 
