@@ -12,8 +12,88 @@ window.data = {
     {
       "id": 2,
       "text": "66666",
-      "color": "red",
-      "fontSize": "40px",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
+      "played":0,
+      "setTime":9
+    },
+    {
+      "id": 2,
+      "text": "66666",
+      "color": "#fff",
+      "fontSize": "30px",
       "played":0,
       "setTime":9
     },
@@ -21,7 +101,7 @@ window.data = {
       "id": 3,
       "text": "9999",
       "color": "#fff",
-      "fontSize": "50px",
+      "fontSize": "30px",
       "setTime":8.5,
       "played":0
     },
@@ -29,7 +109,7 @@ window.data = {
       "id": 4,
       "text": "1111111",
       "color": "#fff",
-      "fontSize": "50px",
+      "fontSize": "30px",
       "setTime":7.5,
       "played":0
     },
@@ -53,7 +133,7 @@ window.data = {
       "id": 7,
       "text": "6666",
       "color": "#fff",
-      "fontSize": "40px",
+      "fontSize": "30px",
       "setTime":1.5,
       "played":0
     },
