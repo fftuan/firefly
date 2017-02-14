@@ -110,7 +110,7 @@ body, button, input, select, textarea {
 }
 
 .danmu-text {
-    font-size: 24px;
+    font-size: 30px;
     position: absolute;
     white-space: nowrap;
     top: 50%;

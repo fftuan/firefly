@@ -76,4 +76,8 @@
 
  在命令行(cmd)里找到你clone下来的文件夹然后输入 npm i 等待安装完成后输入 npm start就可以在浏览器输入localhost:8080正式浏览
 
+ # webpack
+
  [webpack各种中文资料](http://www.cnblogs.com/vajoy/p/4650467.html)
+
+ 关于webpack是现在很流行的一个管理工具，这里可以帮你把很多

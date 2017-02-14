@@ -172,28 +172,14 @@ $media.on('timeupdate', function(e) {
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
-      danmuRoll(data.text, data.color, data.fontSize, 'running');
+      danmuRoll(data.text, data.color, data.fontSize);
       data.played = 1;
     }
   });
 
+  $('#displayDanmu').find('span').css('animation-play-state','running');
+
 });
-
-
-//bug
-// $media.on('timeupdate',function(e){
-//   //播放器进度条
-//   var time = this.currentTime;
-//   //遍历数据
-//   $.map(data.danmu,function(data){
-//     if(data.setTime < time){
-//       console.log('ok');
-//       danmuRoll(data.text, data.color, data.fontSize);
-//       window.data.danmu.splice(data.id,1);
-//     }
-//   });
-//
-// });
 
 //弹幕池
 
