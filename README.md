@@ -1,4 +1,6 @@
+
 播放器的制作，各位可以直接开个新的分支然后开始修改优化的我代码
+
 
 > 弹幕播放器v0.0.1
 
@@ -32,8 +34,40 @@
 
 14.播放器输入弹幕问题
 
+<<<<<<< HEAD
 15.视频加载使用异步请求
 
 16.播放结束时重置弹幕setTime
 
 17.测试50个dom容器搭载弹幕，弹幕播放完成回收dom(待测试)
+=======
+
+ －－－－－ 
+ 
+ to run this, first: 
+
+ 
+ clone this repo to your local machine. you might need this guide: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000   proposed by 葫芦 
+
+ second: 
+ 
+ 
+ install npm, and use npm run this project. you might need this guide: 
+ 
+ http://www.cnblogs.com/PeunZhang/p/5553574.html  proposed by 火乌日暗崩腾云 
+
+ simple guide:   1. npm install 2.npm start  3.visit 127.0.0.1:8080 through web browser
+
+-------
+ 
+ to edit this, just use your favourite text editor and do whatever you want in your local code base. 
+
+ 
+ to make a commit, make sure your changeset is a runnable one; if your changeset is runnable and furfill the goal we both agreed, i will merge that into master branch. 
+
+
+ > by FrosV 
+
+ [webpack各种中文资料](http://www.cnblogs.com/vajoy/p/4650467.html)
+
+>>>>>>> 93f7e9d64c2ee27385de84eb8830708919e7a117
