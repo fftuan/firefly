@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: path.resolve(APP_PATH, 'index/index.js'),
-    list: path.resolve(APP_PATH, './index/js/list.js'),
+    list: path.resolve(APP_PATH, 'list/list.js'),
     utils: ['jquery', 'lodash']
   },
   output: {
@@ -65,7 +65,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'firefly-list',
       filename:'list.html',
-      template: path.resolve(APP_PATH, 'index/pages/list.html'),
+      template: path.resolve(APP_PATH, 'list/list.html'),
       chunks: ['list'],
       inject: 'body'
     }),

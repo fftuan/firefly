@@ -1,10 +1,10 @@
-require('../../../node_modules/bootstrap/dist/css/bootstrap.css');
+require('../../node_modules/bootstrap/dist/css/bootstrap.css');
 //css文件引入
-require('../css/list.css');
+require('./css/list.css');
 
 
 //--------- 加载测试用图片 ---------
-var test_img = require('../images/little-whitches.jpg');
+var test_img = require('./images/little-whitches.jpg');
 $('.content-left').find('img').attr('src', test_img);
 $('.preview').find('img').attr('src', test_img);
 
