@@ -172,7 +172,7 @@ $media.on('timeupdate', function(e) {
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
-      danmuRoll(data.text, data.color, data.fontSize,running);
+      danmuRoll(data.text, data.color, data.fontSize, running);
       data.played = 1;
     }
   });
@@ -196,12 +196,19 @@ $media.on('timeupdate', function(e) {
 // });
 
 //弹幕池
-$.map(data.danmu, function(data) {
-  var thisDanmu = $('<li class="clearfix">' +
-    '<p class="danmuchi-text">' + data.text + '</p><p class="danmuchi-time">' + data.setTime + '</p>' +
-    '</li>');
-  $('#danmuchi').append(thisDanmu);
-});
+
+function danmuchi() {
+  var _addContent = '';
+  $.map(data.danmu, function(data) {
+    var thisDanmu = '<li class="clearfix">' +
+      '<p class="danmuchi-text">' + data.text + '</p><p class="danmuchi-time">' + data.setTime + '</p>' +
+      '</li>';
+      _addContent += thisDanmu;
+  });
+  $('#danmuchi').append(_addContent);
+};
+
+danmuchi();
 
 //播放器事件
 $media.on('play', function() {
@@ -214,7 +221,7 @@ $media.on('pause', function() {
   $('#displayDanmu').find('span').css('animation-play-state', 'paused');
 });
 
-$media.on('ended',function(){
+$media.on('ended', function() {
   console.log('It is ended event');
   $.map(data.danmu, function(data) {
     data.setTime = 0;
