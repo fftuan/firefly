@@ -34,40 +34,46 @@
 
 14.播放器输入弹幕问题
 
-<<<<<<< HEAD
 15.视频加载使用异步请求
 
 16.播放结束时重置弹幕setTime
 
 17.测试50个dom容器搭载弹幕，弹幕播放完成回收dom(待测试)
-=======
 
- －－－－－ 
- 
- to run this, first: 
+ －－－－－
 
- 
- clone this repo to your local machine. you might need this guide: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000   proposed by 葫芦 
+ to run this, first:
 
- second: 
- 
- 
- install npm, and use npm run this project. you might need this guide: 
- 
- http://www.cnblogs.com/PeunZhang/p/5553574.html  proposed by 火乌日暗崩腾云 
+ clone this repo to your local machine. you might need this guide: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000   proposed by 葫芦
 
- simple guide:   1. npm install 2.npm start  3.visit 127.0.0.1:8080 through web browser
+ second:
+
+ install npm, and use npm run this project. you might need this guide:
+
+ http://www.cnblogs.com/PeunZhang/p/5553574.html  proposed by 火乌日暗崩腾云
+
+ simple guide:
+
+ 1. npm install
+ 2.npm start  
+ 3.visit 127.0.0.1:8080 through web browser
 
 -------
- 
- to edit this, just use your favourite text editor and do whatever you want in your local code base. 
 
- 
- to make a commit, make sure your changeset is a runnable one; if your changeset is runnable and furfill the goal we both agreed, i will merge that into master branch. 
+ to edit this, just use your favourite text editor and do whatever you want in your local code base.
 
 
- > by FrosV 
+ to make a commit, make sure your changeset is a runnable one; if your changeset is runnable and furfill the goal we both agreed, i will merge that into master branch.
+
+
+ > by FrosV
+
+ # 初衷
+
+ **就是为了让各位初学者接触到一个真实的项目，然后我们会进行一个完整的公司流程来制作这个网站，让大家都能接触到真实的公司计划，还有在面试的时候可以把这个网站贴到你的简历上，一个很好的给大家练手的计划，希望大家都能参与然后多提出问题多进行优化**
+
+ # 关于如何让我们的网站跑起来
+
+ 在命令行(cmd)里找到你clone下来的文件夹然后输入 npm i 等待安装完成后输入 npm start就可以在浏览器输入localhost:8080正式浏览
 
  [webpack各种中文资料](http://www.cnblogs.com/vajoy/p/4650467.html)
-
->>>>>>> 93f7e9d64c2ee27385de84eb8830708919e7a117
