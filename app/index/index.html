@@ -2,41 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>danmu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>danmu</title>
 </head>
 
 <body>
-    <div class="video-wrap content-box clearfix">
-        <div class="clearfix">
-            <div class="display-danmu" id="displayDanmu">
-                <!-- <span class="danmu-text" id="danmu1">这是一条测试弹幕</span> -->
-            </div>
-            <video src="video/a.mkv" controls="controls" id="danmuPlayer" class="video-box"></video>
-            <div class="danmuchi-box">
-                <ul class="danmuchi" id="danmuchi">
-                    <li class="clearfix">
-                        <p class="danmuchi-text">文本</p>
-                        <p class="danmuchi-time">时间</p>
-                    </li>
-                    <li class="clearfix">
-                        <p class="danmuchi-text">11</p>
-                        <p class="danmuchi-time">1</p>
-                    </li>
-                    <li class="clearfix">
-                        <p class="danmuchi-text">22</p>
-                        <p class="danmuchi-time">2</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="input-box clearfix">
-            <input type="text" name="" value="" class="user-input form-control" id="danmuInput">
-            <button class="btn btn-primary" id="sendDanmu">发送</button>
-        </div>
+  <div class="video-wrap content-box clearfix">
+    <div class="clearfix">
+      <div class="display-danmu" id="displayDanmu">
+        <!-- <span class="danmu-text" id="danmu1">这是一条测试弹幕</span> -->
+      </div>
+      <video src="video/a.mkv" controls="controls" id="danmuPlayer" class="video-box"></video>
+      <div class="danmuchi-box">
+        <ul class="danmuchi" id="danmuchi">
+          <li class="clearfix">
+            <p class="danmuchi-text">文本</p>
+            <p class="danmuchi-time">时间</p>
+          </li>
+        </ul>
+      </div>
     </div>
+    <div class="input-box clearfix">
+      <input type="text" name="" value="" class="user-input form-control" id="danmuInput">
+      <button class="btn btn-primary" id="sendDanmu">发送</button>
+    </div>
+  </div>
 </body>
 
 </html>
