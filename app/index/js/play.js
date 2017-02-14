@@ -172,7 +172,7 @@ $media.on('timeupdate', function(e) {
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
-      danmuRoll(data.text, data.color, data.fontSize, running);
+      danmuRoll(data.text, data.color, data.fontSize, 'running');
       data.played = 1;
     }
   });
