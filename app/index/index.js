@@ -7,3 +7,4 @@ require('../../node_modules/bootstrap/dist/css/bootstrap.css');
 //js文件引入
 require('./js/play.js');
 require('./js/send.js');
+require('./js/nav.js');

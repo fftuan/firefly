@@ -6,212 +6,212 @@ window.data = {
       "text": "2333",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":0.5
+      "played": 0,
+      "setTime": 0.5
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 2,
       "text": "66666",
       "color": "#fff",
       "fontSize": "30px",
-      "played":0,
-      "setTime":9
+      "played": 0,
+      "setTime": 9
     },
     {
       "id": 3,
       "text": "9999",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":8.5,
-      "played":0
+      "setTime": 8.5,
+      "played": 0
     },
     {
       "id": 4,
       "text": "1111111",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":7.5,
-      "played":0
+      "setTime": 7.5,
+      "played": 0
     },
     {
       "id": 5,
       "text": "444444",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":2.5,
-      "played":0
+      "setTime": 2.5,
+      "played": 0
     },
     {
       "id": 6,
       "text": "444444",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":6.5,
-      "played":0
+      "setTime": 6.5,
+      "played": 0
     },
     {
       "id": 7,
       "text": "6666",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":1.5,
-      "played":0
+      "setTime": 1.5,
+      "played": 0
     },
     {
       "id": 8,
       "text": "99999",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":3.5,
-      "played":0
+      "setTime": 3.5,
+      "played": 0
     },
     {
       "id": 9,
       "text": "444444",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":4.5,
-      "played":0
+      "setTime": 4.5,
+      "played": 0
     },
     {
       "id": 10,
       "text": "444444",
       "color": "#fff",
       "fontSize": "30px",
-      "setTime":5.5,
-      "played":0
+      "setTime": 5.5,
+      "played": 0
     }
   ]
 }
 
 window.$media = $('#danmuPlayer');
 
-$media.on('timeupdate',function(e){
+$media.on('timeupdate', function(e) {
   //播放器进度条
   var time = this.currentTime;
   //遍历数据
-  $.map(data.danmu,function(data){
-    if(data.setTime < time && data.played == 0){
+  $.map(data.danmu, function(data) {
+    if (data.setTime < time && data.played == 0) {
       danmuRoll(data.text, data.color, data.fontSize);
       data.played = 1;
     }
   });
 
+  $('#displayDanmu').find('span').css('animation-play-state','running');
+
 });
-
-
-//bug
-// $media.on('timeupdate',function(e){
-//   //播放器进度条
-//   var time = this.currentTime;
-//   //遍历数据
-//   $.map(data.danmu,function(data){
-//     if(data.setTime < time){
-//       console.log('ok');
-//       danmuRoll(data.text, data.color, data.fontSize);
-//       window.data.danmu.splice(data.id,1);
-//     }
-//   });
-//
-// });
 
 //弹幕池
-$.map(data.danmu,function(data){
-  var thisDanmu = $('<li class="clearfix">'+
-                      '<p class="danmuchi-text">'+ data.text +'</p><p class="danmuchi-time">'+ data.setTime +'</p>'+
-                    '</li>');
-  $('#danmuchi').append(thisDanmu);
-});
+
+function danmuchi() {
+  var _addContent = '';
+  $.map(data.danmu, function(data) {
+    var thisDanmu = '<li class="clearfix">' +
+      '<p class="danmuchi-text">' + data.text + '</p><p class="danmuchi-time">' + data.setTime + '</p>' +
+      '</li>';
+      _addContent += thisDanmu;
+  });
+  $('#danmuchi').append(_addContent);
+};
+
+danmuchi();
 
 //播放器事件
-$media.on('play',function(){
+$media.on('play', function() {
   console.log('It is play event');
-  $('#displayDanmu').find('span').css('animation-play-state','running');
+  $('#displayDanmu').find('span').css('animation-play-state', 'running');
 });
 
-$media.on('pause',function(){
+$media.on('pause', function() {
   console.log('It is pause event');
-  $('#displayDanmu').find('span').css('animation-play-state','paused');
+  $('#displayDanmu').find('span').css('animation-play-state', 'paused');
+});
+
+$media.on('ended', function() {
+  console.log('It is ended event');
+  $.map(data.danmu, function(data) {
+    data.setTime = 0;
+  });
 });
 
 // 封装播放器插件
