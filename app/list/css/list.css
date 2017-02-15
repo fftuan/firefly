@@ -1,0 +1,172 @@
+.
+/*基础配置*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select,
+label {
+    vertical-align: middle;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #2e2e2e;
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
+}
+
+
+/*基础配置 end*/
+
+
+/*------ 列表页面配置 START------*/
+
+body {
+    height: 100%;
+}
+
+
+/*--- 视频列表样式  START ---*/
+
+.container {
+	vertical-align: middle;
+}
+
+.video-list-header {
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 24px;
+    color: #222;
+    border-bottom: 1px solid #e5e9ef;
+}
+
+.video-list {
+    padding: 0;
+}
+
+.video-list-content {
+    width: 50%;
+    padding: 1em 1em 1em 0;
+    border-bottom: 1px solid #e5e9ef;
+    float: left;
+}
+
+.video-list-content:nth-child(odd) {
+    border-right: 1px solid #e5e9ef;
+}
+
+.content-wrapper {
+    margin-left: 1em;
+    vertical-align: top;
+}
+
+.content-left {
+    width: 114px;
+    height: 70px;
+    margin: 0 20px 0 0;
+    background: #333;
+    border-radius: 4px;
+}
+
+.content-left img {
+    display: block;
+    max-width: 160px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.content-right {
+    display: inline-block;
+}
+
+.video-title {
+    max-height: 40px;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    color: #222;
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.video-desc {
+    color: #99a2aa;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    line-height: 20px;
+    height: 40px;
+}
+
+.video-info {
+    display: inline-block;
+    vertical-align: top;
+    color: #99a2aa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 16px;
+}
+
+.video-play-times{
+	margin-left: 0.5em;
+}
+
+.play-icon, .danmu-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.video-play-danmu{
+	margin-left: 1.5em;
+}
+/*--- 视频列表样式  END ---*/
+
+
+/*------ 列表页面配置 END --------*/
