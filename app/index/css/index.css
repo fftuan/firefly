@@ -50,12 +50,12 @@ body, button, input, select, textarea {
 .nav {
   height: 50px;
   width: 100%;
+  background: #5bc0de;
 }
 
 .nav .nav-content {
   width: 1190px;
   min-width: 1190px;
-  background: #fff;
   height: 50px;
   margin: 0 auto;
 }
