@@ -122,6 +122,11 @@ body, button, input, select, textarea {
 .input-box {
   height: 100px;
   width: 100%;
+  margin-top: 20px;
+}
+
+.send-btn{
+  margin-left: 20px;
 }
 
 
