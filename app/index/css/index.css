@@ -1,11 +1,37 @@
 /*基础配置*/
 
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, lengend, button, input, textarea, th, td {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
   margin: 0;
   padding: 0;
 }
 
-input, select, label {
+input,
+select,
+label {
   vertical-align: middle;
   outline: none;
 }
@@ -14,11 +40,18 @@ li {
   list-style: none;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-size: 100%;
 }
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea {
   color: #2e2e2e;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
 }
@@ -125,7 +158,7 @@ body, button, input, select, textarea {
   margin-top: 20px;
 }
 
-.send-btn{
+.send-btn {
   margin-left: 20px;
 }
 
