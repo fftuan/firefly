@@ -164,11 +164,19 @@ window.data = {
   ]
 }
 
-window.$media = $('#danmuPlayer');
+//JQ返回对象
+var $media = $('#danmuPlayer');
+//返回原生对象
+var media = $('#danmuPlayer')[0];
+
+var totalTime = 0;
 
 $media.on('timeupdate', function(e) {
   //播放器进度条
-  var time = this.currentTime;
+  var time = parseInt(this.currentTime,10);
+  // console.log(totalTime);
+  $('#progressBar').css('width',(100 * time / totalTime).toFixed(2) +'%');
+  $('#nowTime').text(time);
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
@@ -195,6 +203,21 @@ function danmuchi() {
 };
 
 danmuchi();
+
+//播放器控件(H5的播放器可以使用原生来操作)
+$('#controls-play').on('click',function(){
+  if(media.paused){
+    media.play();
+  }else {
+    media.pause();
+  }
+});
+
+
+$media.on('canplay',function(){
+  totalTime = media.duration;
+  $('#totalTime').text(totalTime);
+});
 
 //播放器事件
 $media.on('play', function() {

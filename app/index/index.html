@@ -20,7 +20,7 @@
       <div class="display-danmu" id="displayDanmu">
         <!-- <span class="danmu-text" id="danmu1">这是一条测试弹幕</span> -->
       </div>
-      <video src="video/a.mkv" controls="controls" id="danmuPlayer" class="video-box"></video>
+      <video src="video/a.mkv" id="danmuPlayer" class="video-box" controls="controls"></video>
       <div class="danmuchi-box">
         <ul class="danmuchi" id="danmuchi">
           <li class="clearfix">
@@ -33,6 +33,15 @@
     <div class="input-box clearfix">
       <input type="text" name="" value="" class="user-input form-control" id="danmuInput">
       <button class="btn btn-primary send-btn" id="sendDanmu">发送</button>
+    </div>
+    <div class="video-controls">
+      <button class="btn btn-success" id="controls-play">播放</button>
+      <p>当前时间<span id="nowTime"></span></p>
+      <p>总时间<span id="totalTime"></span></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+        </div>
+      </div>
     </div>
   </div>
 </body>
