@@ -103,6 +103,17 @@ textarea {
   font-weight: bold !important;
 }
 
+.logo {
+  float: left;
+  height: 100%;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+}
+
 
 /*nav end*/
 
