@@ -175,7 +175,7 @@ $media.on('timeupdate', function(e) {
   //播放器进度条
   var time = parseInt(this.currentTime,10);
   // console.log(totalTime);
-  $('#progressBar').css('width',(100 * time / totalTime).toFixed(2) +'%');
+  $('#progressBar').css('width',(100 * time / totalTime).toFixed(1) +'%');
   $('#nowTime').text(time);
   //遍历数据
   $.map(data.danmu, function(data) {
@@ -205,6 +205,8 @@ function danmuchi() {
 danmuchi();
 
 //播放器控件(H5的播放器可以使用原生来操作)
+
+//播放/暂停
 $('#controls-play').on('click',function(){
   if(media.paused){
     media.play();
@@ -213,10 +215,16 @@ $('#controls-play').on('click',function(){
   }
 });
 
-
+//能播放获取总时间
 $media.on('canplay',function(){
   totalTime = media.duration;
   $('#totalTime').text(totalTime);
+});
+
+//静音开关
+$('#meted').on('click',function(){
+  media.muted = !media.muted;
+  return false;
 });
 
 //播放器事件
