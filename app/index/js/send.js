@@ -6,7 +6,7 @@ $('#sendDanmu').on('click', function() {
     danmuRoll(_thisTxt);
     $('#danmuInput').val('');
   } else {
-    console.log('输入内容无法为空！');
+    $('#inputError').show().text('输入的内容不能为空！');
     return;
   }
 });

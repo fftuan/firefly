@@ -33,6 +33,7 @@
     <div class="input-box clearfix">
       <input type="text" name="" value="" class="user-input form-control" id="danmuInput">
       <button class="btn btn-primary send-btn" id="sendDanmu">发送</button>
+      <div class="alert alert-danger" role="alert" id="inputError">error</div>
     </div>
     <div class="video-controls">
       <button class="btn btn-success" id="controls-play">播放</button>
@@ -43,9 +44,12 @@
         </div>
       </div>
       <a href="javascript:;" class="muted" id="muted">Mute/Ummute</a>
-      <div class="volume-bar">
-        <div class="volume"></div>
+      <div class="progress" id="volumeBar">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" id="volume">
+          100%
+        </div>
       </div>
+      <button type="button" class="btn btn-primary" id="fullScreen">全屏</button>
     </div>
   </div>
 </body>

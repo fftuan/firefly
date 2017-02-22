@@ -173,9 +173,9 @@ var totalTime = 0;
 
 $media.on('timeupdate', function(e) {
   //播放器进度条
-  var time = parseInt(this.currentTime,10);
+  var time = parseInt(this.currentTime, 10);
   // console.log(totalTime);
-  $('#progressBar').css('width',(100 * time / totalTime).toFixed(1) +'%');
+  $('#progressBar').css('width', (100 * time / totalTime).toFixed(1) + '%');
   $('#nowTime').text(time);
   //遍历数据
   $.map(data.danmu, function(data) {
@@ -185,7 +185,7 @@ $media.on('timeupdate', function(e) {
     }
   });
 
-  $('#displayDanmu').find('span').css('animation-play-state','running');
+  $('#displayDanmu').find('span').css('animation-play-state', 'running');
 
 });
 
@@ -197,7 +197,7 @@ function danmuchi() {
     var thisDanmu = '<li class="clearfix">' +
       '<p class="danmuchi-text">' + data.text + '</p><p class="danmuchi-time">' + data.setTime + '</p>' +
       '</li>';
-      _addContent += thisDanmu;
+    _addContent += thisDanmu;
   });
   $('#danmuchi').append(_addContent);
 };
@@ -207,24 +207,46 @@ danmuchi();
 //播放器控件(H5的播放器可以使用原生来操作)
 
 //播放/暂停
-$('#controls-play').on('click',function(){
-  if(media.paused){
+$('#controls-play').on('click', function() {
+  if (media.paused) {
     media.play();
-  }else {
+  } else {
     media.pause();
   }
 });
 
 //能播放获取总时间
-$media.on('canplay',function(){
+$media.on('canplay', function() {
   totalTime = media.duration;
   $('#totalTime').text(totalTime);
 });
 
 //静音开关
-$('#meted').on('click',function(){
+$('#muted').on('click', function() {
+  debugger
   media.muted = !media.muted;
+  if(media.muted){
+    $('#volume').text('静音');
+  }
   return false;
+});
+
+//音量控制
+$('#volumeBar').on('mousedown', function(e) {
+  media.muted = false;
+  var $volume = $('#volume');
+  var _mouseVal = e.pageX - $volume.offset().left;
+  var _moveVal = 100 * _mouseVal / $('#volumeBar').width();
+  $volume.css('width', _moveVal + '%');
+  $volume.text(parseInt(_moveVal,10) + '%');
+  media.volume = _moveVal / 100;
+});
+
+//全屏
+
+$('#fullScreen').on('click',function(e){
+  media.webkitEnterFullscreen();
+  return;
 });
 
 //播放器事件
