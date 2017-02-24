@@ -169,14 +169,14 @@ var $media = $('#danmuPlayer');
 //返回原生对象
 var media = $('#danmuPlayer')[0];
 
-var totalTime = 0;
+var _totalTime = 0;
 
 $media.on('timeupdate', function(e) {
   //播放器进度条
   var time = parseInt(this.currentTime, 10);
   // console.log(totalTime);
-  $('#progressBar').css('width', (100 * time / totalTime).toFixed(1) + '%');
-  $('#nowTime').text(time);
+  $('#progressBar').css('width', (100 * time / _totalTime).toFixed(1) + '%');
+  $('#nowTimeMinute').text(time);
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
@@ -217,22 +217,28 @@ $('#controls-play').on('click', function() {
 
 //能播放获取总时间
 $media.on('canplay', function() {
-  totalTime = media.duration;
-  $('#totalTime').text(totalTime);
+  _totalTime = parseInt(media.duration,10);
+  var _totalTimeHour = Math.floor( _totalTime / 60);
+  var _totalTimeMinute = parseInt(( _totalTime % 60) ,10);
+  $('#totalTimeHour').text(_totalTimeHour);
+  $('#totalTimeMinute').text(_totalTimeMinute);
 });
 
 //静音开关
 $('#muted').on('click', function() {
-  debugger
   media.muted = !media.muted;
   if(media.muted){
     $('#volume').text('静音');
+    $(this).text('开启');
+  } else {
+    $('#volume').text(parseInt($('#volume').width() * 100 / $('#volumeBar').width(),10) + '%');
+    $(this).text('静音');
   }
   return false;
 });
 
 //音量控制
-$('#volumeBar').on('mousedown', function(e) {
+$('#volumeBar').on('mouseup', function(e) {
   media.muted = false;
   var $volume = $('#volume');
   var _mouseVal = e.pageX - $volume.offset().left;

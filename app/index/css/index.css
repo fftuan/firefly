@@ -74,6 +74,10 @@ textarea {
   min-width: 1190px;
 }
 
+.lf {
+  float: left;
+}
+
 
 /*基础配置 end*/
 
@@ -121,10 +125,11 @@ textarea {
 /*播放器样式*/
 
 .video-box {
-  width: 900px;
-  height: 510px;
+  width: 898px;
+  height: 508px;
   background: #000;
   float: left;
+
 }
 
 .user-input {
@@ -174,13 +179,65 @@ textarea {
 }
 
 
+/*播放器控制器*/
+
+.video-left{
+  border: 1px solid #000;
+  position: relative;
+  height: 510px;
+  float: left;
+}
+.time-box {
+  height: 100%;
+  line-height: 40px;
+  margin: 0;
+}
+
+.btn-play,
+.btn-full {
+  margin-top: 5px;
+}
+
+.time-now {
+  margin-right: 10px;
+}
+
+.progress {
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
+
+.muted {
+  height: 100%;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+
+.video-controls{
+  width: 898px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+
+.video-controls .row{
+  margin: 0;
+  padding: 0;
+}
+
+/*播放器控制器 end*/
+
+
 /*播放器样式 end*/
 
 
 /*弹幕样式*/
 
 .display-danmu {
-  width: 900px;
+  width: 898px;
   height: 478px;
   position: absolute;
   z-index: 233;
