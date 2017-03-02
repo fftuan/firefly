@@ -164,11 +164,19 @@ window.data = {
   ]
 }
 
-window.$media = $('#danmuPlayer');
+//JQ返回对象
+var $media = $('#danmuPlayer');
+//返回原生对象
+var media = $('#danmuPlayer')[0];
+
+var _totalTime = 0;
 
 $media.on('timeupdate', function(e) {
   //播放器进度条
-  var time = this.currentTime;
+  var time = parseInt(this.currentTime, 10);
+  // console.log(totalTime);
+  $('#progressBar').css('width', (100 * time / _totalTime).toFixed(1) + '%');
+  $('#nowTimeMinute').text(time);
   //遍历数据
   $.map(data.danmu, function(data) {
     if (data.setTime < time && data.played == 0) {
@@ -177,7 +185,7 @@ $media.on('timeupdate', function(e) {
     }
   });
 
-  $('#displayDanmu').find('span').css('animation-play-state','running');
+  $('#displayDanmu').find('span').css('animation-play-state', 'running');
 
 });
 
@@ -189,12 +197,63 @@ function danmuchi() {
     var thisDanmu = '<li class="clearfix">' +
       '<p class="danmuchi-text">' + data.text + '</p><p class="danmuchi-time">' + data.setTime + '</p>' +
       '</li>';
-      _addContent += thisDanmu;
+    _addContent += thisDanmu;
   });
   $('#danmuchi').append(_addContent);
 };
 
 danmuchi();
+
+//播放器控件(H5的播放器可以使用原生来操作)
+
+//播放/暂停
+$('#controls-play').on('click', function() {
+  if (media.paused) {
+    media.play();
+  } else {
+    media.pause();
+  }
+});
+
+//能播放获取总时间
+$media.on('canplay', function() {
+  _totalTime = parseInt(media.duration,10);
+  var _totalTimeHour = Math.floor( _totalTime / 60);
+  var _totalTimeMinute = parseInt(( _totalTime % 60) ,10);
+  $('#totalTimeHour').text(_totalTimeHour);
+  $('#totalTimeMinute').text(_totalTimeMinute);
+});
+
+//静音开关
+$('#muted').on('click', function() {
+  media.muted = !media.muted;
+  if(media.muted){
+    $('#volume').text('静音');
+    $(this).text('开启');
+  } else {
+    $('#volume').text(parseInt($('#volume').width() * 100 / $('#volumeBar').width(),10) + '%');
+    $(this).text('静音');
+  }
+  return false;
+});
+
+//音量控制
+$('#volumeBar').on('mouseup', function(e) {
+  media.muted = false;
+  var $volume = $('#volume');
+  var _mouseVal = e.pageX - $volume.offset().left;
+  var _moveVal = 100 * _mouseVal / $('#volumeBar').width();
+  $volume.css('width', _moveVal + '%');
+  $volume.text(parseInt(_moveVal,10) + '%');
+  media.volume = _moveVal / 100;
+});
+
+//全屏
+
+$('#fullScreen').on('click',function(e){
+  media.webkitEnterFullscreen();
+  return;
+});
 
 //播放器事件
 $media.on('play', function() {

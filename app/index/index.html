@@ -11,15 +11,48 @@
 <body>
   <div class="nav">
     <div class="nav-content">
-      <button type="button" name="button" class="btn btn-warning btn-lg login-btn" id="login">登录</button>
+      <div class="logo">Gs</div>
+      <button type="button" name="button" class="btn btn-danger btn-lg login-btn" id="login">登录</button>
     </div>
   </div>
   <div class="video-wrap content-box clearfix">
     <div class="clearfix">
-      <div class="display-danmu" id="displayDanmu">
-        <!-- <span class="danmu-text" id="danmu1">这是一条测试弹幕</span> -->
+      <div class="video-left">
+        <div class="display-danmu" id="displayDanmu">
+          <!-- <span class="danmu-text" id="danmu1">这是一条测试弹幕</span> -->
+        </div>
+        <video src="video/a.mkv" id="danmuPlayer" class="video-box"></video>
+        <div class="video-controls">
+          <div class="row">
+            <div class="col-md-1">
+              <button class="btn btn-success btn-sm btn-play" id="controls-play">播放</button>
+            </div>
+            <div class="col-md-2">
+              <p class="lf time-box time-now"><span id="nowTimeHour">00</span>:<span id="nowTimeMinute">00</span></p>
+              <p class="lf time-box"><span id="totalTimeHour"></span>:<span id="totalTimeMinute"></span></p>
+            </div>
+            <div class="col-md-5">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <a href="javascript:;" class="muted" id="muted">静音</a>
+            </div>
+            <div class="col-md-2">
+              <div class="progress" id="volumeBar">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" id="volume">
+                  100%
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <button type="button" class="btn btn-primary btn-sm btn-full" id="fullScreen">全屏</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <video src="video/a.mkv" controls="controls" id="danmuPlayer" class="video-box"></video>
       <div class="danmuchi-box">
         <ul class="danmuchi" id="danmuchi">
           <li class="clearfix">
@@ -32,7 +65,9 @@
     <div class="input-box clearfix">
       <input type="text" name="" value="" class="user-input form-control" id="danmuInput">
       <button class="btn btn-primary send-btn" id="sendDanmu">发送</button>
+      <div class="alert alert-danger input-error" role="alert" id="inputError">error</div>
     </div>
+
   </div>
 </body>
 

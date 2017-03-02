@@ -1,11 +1,37 @@
 /*基础配置*/
 
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, lengend, button, input, textarea, th, td {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
   margin: 0;
   padding: 0;
 }
 
-input, select, label {
+input,
+select,
+label {
   vertical-align: middle;
   outline: none;
 }
@@ -14,11 +40,18 @@ li {
   list-style: none;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-size: 100%;
 }
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea {
   color: #2e2e2e;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Tahoma, "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", sans-serif;
 }
@@ -39,6 +72,10 @@ body, button, input, select, textarea {
   margin: 50px auto 20px;
   width: 1190px;
   min-width: 1190px;
+}
+
+.lf {
+  float: left;
 }
 
 
@@ -70,6 +107,17 @@ body, button, input, select, textarea {
   font-weight: bold !important;
 }
 
+.logo {
+  float: left;
+  height: 100%;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+}
+
 
 /*nav end*/
 
@@ -77,10 +125,11 @@ body, button, input, select, textarea {
 /*播放器样式*/
 
 .video-box {
-  width: 900px;
-  height: 510px;
+  width: 898px;
+  height: 508px;
   background: #000;
   float: left;
+
 }
 
 .user-input {
@@ -125,9 +174,61 @@ body, button, input, select, textarea {
   margin-top: 20px;
 }
 
-.send-btn{
+.send-btn {
   margin-left: 20px;
 }
+
+
+/*播放器控制器*/
+
+.video-left{
+  border: 1px solid #000;
+  position: relative;
+  height: 510px;
+  float: left;
+}
+.time-box {
+  height: 100%;
+  line-height: 40px;
+  margin: 0;
+}
+
+.btn-play,
+.btn-full {
+  margin-top: 5px;
+}
+
+.time-now {
+  margin-right: 10px;
+}
+
+.progress {
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
+
+.muted {
+  height: 100%;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+
+.video-controls{
+  width: 898px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+
+.video-controls .row{
+  margin: 0;
+  padding: 0;
+}
+
+/*播放器控制器 end*/
 
 
 /*播放器样式 end*/
@@ -136,7 +237,7 @@ body, button, input, select, textarea {
 /*弹幕样式*/
 
 .display-danmu {
-  width: 900px;
+  width: 898px;
   height: 478px;
   position: absolute;
   z-index: 233;
@@ -188,3 +289,8 @@ body, button, input, select, textarea {
 
 
 /*弹幕样式 end*/
+
+.input-error{
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
