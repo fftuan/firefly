@@ -1,84 +1,83 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+//引入需要的模块
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'app');
-var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
-module.exports = {
-  devtool: 'source-map',
+
+const config = {
+  devtool: 'eval',
+  //入口文件
   entry: {
-    app: path.resolve(APP_PATH, 'index/index.js'),
-    list: path.resolve(APP_PATH, 'list/list.js'),
-    utils: ['jquery', 'lodash']
+    play: './src/play/entry.js', //单个文件入口
+    list: './src/list/entry.js',
+    commons: ['jquery'] //公共文件
   },
+  //编译后输出文件
   output: {
-    path: BUILD_PATH,
-    filename: '[name].js'
+    path: path.resolve(__dirname, 'dist'), //输出文件夹
+    filename: 'js/[name]-[hash:8].js', //输出文件名,
+    // publicPath: 'font'
   },
+  //本地服务器配置
   devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true
+    contentBase: path.join(__dirname, "dist"), //基础引用地址
+    compress: true, //使用gzip压缩
+    port: 8080, //端口号
+    //host: "0.0.0.0", //允许外部访问（然而我为什么访问不了。）
+    // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")],
+    //多个文件夹配置方式
+    hot: true //热处理
   },
+  //模块化
   module: {
-    loaders: [{
-      test: /\.css$/,
-      loader: 'style!css'
-    }, {
-      test: /\.js$/,
-      loader: 'babel',
-      include: APP_PATH,
-      query: {
-        presets: ['es2015']
-      }
+    rules: [{
+      test: /\.css$/, //匹配css
+      // use: 'css-loader'
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        loader: 'css-loader?id=css'
+      })
     }, {
       test: /\.(png|jpg|gif)$/,
-      loader: 'url?limit=15000'
+      loader: 'file-loader?name=static/img/[name]-[hash:8].[ext]'
+    },{
+      test: /\.(woff|woff2)\??.*$/,
+      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=application/font-woff'
     }, {
-      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=1&mimetype=application/font-woff'
+      test: /\.ttf\??.*$/,
+      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=application/octet-stream'
     }, {
-      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=1&mimetype=application/font-woff2'
+      test: /\.eot\??.*$/,
+      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]'
     }, {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=1&mimetype=application/octet-stream'
-    }, {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file'
-    }, {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=1&mimetype=image/svg+xml'
+      test: /\.svg\??.*$/,
+      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=image/svg+xm'
     }]
   },
+  //插件
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'firefly',
-      filename:'index.html',
-      template: path.resolve(APP_PATH, 'index/index.html'),
-      chunks: ['app', 'utils'],
-      inject: 'body'
+    new HtmlWebpackPlugin({ //html注入文件插件
+      filename: 'play.html', //文件名
+      template: './src/play/play.html', //渲染模板
+      chunks: ['play', 'commons'], //原型
+      // inject: 'body' //注入位置
     }),
     new HtmlWebpackPlugin({
-      title: 'firefly-list',
-      filename:'list.html',
-      template: path.resolve(APP_PATH, 'list/list.html'),
-      chunks: ['list'],
-      inject: 'body'
+      filename: 'list.html',
+      template: './src/list/list.html',
+      chunks: ['list', 'commons'],
+      // inject: 'body'
     }),
-    new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin({ //？？？
       $: 'jquery',
       jQuery: 'jquery',
       _: 'lodash',
       lodash: 'lodash'
-    })
-  ],
-  resolve: {
-    alias: {
+    }),
+    new ExtractTextPlugin('static/css/[name]-[hash:8].css')
+  ]
+}
 
-    }
-  }
-};
+module.exports = config;
