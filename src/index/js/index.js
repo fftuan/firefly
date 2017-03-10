@@ -1,5 +1,5 @@
 //--------- 加载测试用图片 ---------
-var test_img = require('./images/little-whitches.jpg');
+var test_img = require('../images/little-whitches.jpg');
 $('.content-left').find('img').attr('src', test_img);
 $('.preview').find('img').attr('src', test_img);
 

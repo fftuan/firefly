@@ -61,7 +61,7 @@
  simple guide:
 
  1. npm install
- 2.npm start  
+ 2.npm start
  3.visit 127.0.0.1:8080 through web browser
 
 -------
@@ -87,3 +87,4 @@
  [webpack各种中文资料](http://www.cnblogs.com/vajoy/p/4650467.html)
 
  关于webpack是现在很流行的一个管理工具，这里可以帮你把很多
+ !
