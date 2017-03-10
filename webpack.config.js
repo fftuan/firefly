@@ -11,7 +11,7 @@ const config = {
   //入口文件
   entry: {
     play: './src/play/entry.js', //单个文件入口
-    list: './src/list/entry.js',
+    list: './src/index/entry.js',
     commons: ['jquery'] //公共文件
   },
   //编译后输出文件
