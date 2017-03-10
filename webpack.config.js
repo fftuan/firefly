@@ -66,7 +66,7 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       filename: 'list.html',
-      template: './src/list/list.html',
+      template: './src/index/index.html',
       chunks: ['list', 'commons'],
       // inject: 'body'
     }),
