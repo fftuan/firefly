@@ -1,4 +1,4 @@
-
+﻿
 播放器的制作，各位可以直接开个新的分支然后开始修改优化的我代码
 
 
@@ -61,7 +61,7 @@
  simple guide:
 
  1. npm install
- 2.npm start  
+ 2.npm start
  3.visit 127.0.0.1:8080 through web browser
 
 -------
@@ -80,10 +80,11 @@
 
  # 关于如何让我们的网站跑起来
 
- 在命令行(cmd)里找到你clone下来的文件夹然后输入 npm i 等待安装完成后输入 npm start就可以在浏览器输入localhost:8080正式浏览
+ 在命令行(cmd)里找到你clone下来的文件夹然后输入 npm i 等待安装完成后输入npm run build等待编译完成后 npm start就可以在浏览器输入localhost:8080正式浏览
 
  # webpack
 
  [webpack各种中文资料](http://www.cnblogs.com/vajoy/p/4650467.html)
 
  关于webpack是现在很流行的一个管理工具，这里可以帮你把很多
+ !
