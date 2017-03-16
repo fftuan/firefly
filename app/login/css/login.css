@@ -1,0 +1,151 @@
+/* common style start*/
+/* 一些可以公用的小式样，比如边框位置和颜色等*/
+
+.border-left-gray{
+  border-left: 1px solid #e5e9ef;
+}
+
+/* common style start*/
+
+/*nav  start*/
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background: #5bc0de;
+}
+
+.nav .nav-content {
+    width: 1190px;
+    min-width: 1190px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.login-btn {
+    float: right;
+    padding: 18px 16px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    font-weight: bold !important;
+}
+
+.logo {
+    float: left;
+    height: 100%;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+}
+
+.site-logo:link {
+    color: #FFFFFF;
+}
+
+.site-logo:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.site-logo:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.site-logo:active {
+    color: #FFFFFF;
+}
+
+
+/*nav end*/
+
+
+/*----- Login Container START----- */
+
+.content-wrapper {
+    width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/*----- Content Left START----- */
+
+
+/*----- Content Left END----- */
+
+
+/*----- Content Right START----- */
+
+.content-right {
+    padding: 20px;
+}
+
+
+/*----- Content Right END----- */
+
+
+/*----- Login Container END----- */
+
+
+/*----- Footer Start----- */
+
+.footer {
+    width: 100%;
+    height: 300px;
+    background: #F6F9FA;
+    position: absolute;
+    bottom: 0;
+}
+
+.foot-wrap {
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.foot-list li {
+    width: 300px;
+    height: 120px;
+    padding:20px;
+    list-style: none;
+    text-align: left;
+    float: left;
+}
+
+.list-header {
+    margin-bottom: 20px;
+    color: #717171;
+}
+
+.list-content {
+    width: 30%;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.list-content a:link {
+    color: #222222;
+}
+
+.list-content a:visited {
+    color: #222222;
+    text-decoration: none;
+}
+
+.list-content a:hover {
+    color: #00A1D6;
+    text-decoration: none;
+}
+
+.list-content:active {
+    color: #222222;
+}
+
+/*----- Footer End----- */
