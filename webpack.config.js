@@ -11,6 +11,7 @@ module.exports = {
   entry: {
     app: path.resolve(APP_PATH, 'index/index.js'),
     list: path.resolve(APP_PATH, 'list/list.js'),
+    login: path.resolve(APP_PATH, 'login/login.js'),
     utils: ['jquery', 'lodash']
   },
   output: {
@@ -35,7 +36,7 @@ module.exports = {
         presets: ['es2015']
       }
     }, {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|jpeg)$/,
       loader: 'url?limit=15000'
     }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
@@ -57,16 +58,23 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'firefly',
-      filename:'index.html',
+      filename: 'index.html',
       template: path.resolve(APP_PATH, 'index/index.html'),
       chunks: ['app', 'utils'],
       inject: 'body'
     }),
     new HtmlWebpackPlugin({
       title: 'firefly-list',
-      filename:'list.html',
+      filename: 'list.html',
       template: path.resolve(APP_PATH, 'list/list.html'),
       chunks: ['list'],
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'firefly-login',
+      filename: 'login.html',
+      template: path.resolve(APP_PATH, 'login/login.html'),
+      chunks: ['login'],
       inject: 'body'
     }),
     new webpack.ProvidePlugin({
