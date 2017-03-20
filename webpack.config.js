@@ -36,7 +36,7 @@ module.exports = {
         presets: ['es2015']
       }
     }, {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|jpeg)$/,
       loader: 'url?limit=15000'
     }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
