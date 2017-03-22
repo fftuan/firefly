@@ -77,21 +77,20 @@ const config = {
       filename: 'play.html', //文件名
       template: './src/play/play.html', //渲染模板
       chunks: ['play', 'commons'], //原型
-      // inject: 'body' //注入位置
+      inject: 'body' //注入位置
     }),
     new HtmlWebpackPlugin({
       filename: 'list.html',
       template: './src/index/index.html',
       chunks: ['list', 'commons'],
-      // inject: 'body'
+      inject: 'body'
     }),
-    new webpack.ProvidePlugin({ //？？？
+    new webpack.ProvidePlugin({ //遇到这些识别码自动转换
       $: 'jquery',
       jQuery: 'jquery',
-      _: 'lodash',
-      lodash: 'lodash'
+      'window.jQuery': 'jquery'
     }),
-    new ExtractTextPlugin('static/css/[name]-[hash:8].css')
+    new ExtractTextPlugin('static/css/[name]-[hash:8].css')//注入css样式
   ]
 }
 
