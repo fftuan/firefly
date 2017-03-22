@@ -16,7 +16,7 @@ const config = {
   },
   //编译后输出文件
   output: {
-    // path: path.resolve(__dirname, 'dist'), //输出文件夹
+    path: path.resolve(__dirname, 'dist'), //输出文件夹
     filename: 'js/[name]-[hash:8].js', //输出文件名,
     // publicPath: 'font'
   },
@@ -35,26 +35,40 @@ const config = {
   module: {
     rules: [{
       test: /\.css$/, //匹配css
-      // use: 'css-loader'
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         loader: 'css-loader?id=css'
       })
     }, {
       test: /\.(png|jpg|gif)$/,
-      loader: 'file-loader?name=static/img/[name]-[hash:8].[ext]'
+      loader: 'file-loader',
+      query:{
+        name:'static/img/[name]-[hash:8].[ext]'
+      }
     },{
       test: /\.(woff|woff2)\??.*$/,
-      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=application/font-woff'
+      loader: 'file-loader',
+      query:{
+        name:'/static/fonts/[name]-[hash:8].[ext]&minetype=application/font-woff'
+      }
     }, {
       test: /\.ttf\??.*$/,
-      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=application/octet-stream'
+      loader: 'file-loader',
+      query:{
+        name:'/static/fonts/[name]-[hash:8].[ext]&minetype=application/octet-stream'
+      }
     }, {
       test: /\.eot\??.*$/,
-      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]'
+      loader: 'file-loader',
+      query:{
+        name:'/static/fonts/[name]-[hash:8].[ext]'
+      }
     }, {
       test: /\.svg\??.*$/,
-      loader: 'file-loader?name=/static/fonts/[name]-[hash:8].[ext]&minetype=image/svg+xm'
+      loader: 'file-loader',
+      query:{
+        name:'/static/fonts/[name]-[hash:8].[ext]&minetype=image/svg+xm'
+      }
     }]
   },
   //插件
