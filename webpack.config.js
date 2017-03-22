@@ -16,7 +16,7 @@ const config = {
   },
   //编译后输出文件
   output: {
-    path: path.resolve(__dirname, 'dist'), //输出文件夹
+    // path: path.resolve(__dirname, 'dist'), //输出文件夹
     filename: 'js/[name]-[hash:8].js', //输出文件名,
     // publicPath: 'font'
   },
@@ -24,6 +24,7 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, "dist"), //基础引用地址
     compress: true, //使用gzip压缩
+    historyApiFallback: true,//重定向
     port: 8080, //端口号
     //host: "0.0.0.0", //允许外部访问（然而我为什么访问不了。）
     // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")],
