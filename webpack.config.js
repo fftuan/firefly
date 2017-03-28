@@ -22,7 +22,7 @@ const config = {
   },
   //本地服务器配置
   devServer: {
-    contentBase: path.join(__dirname, "dist"), //基础引用地址
+    // contentBase: path.join(__dirname, "dist"), //基础引用地址
     compress: true, //使用gzip压缩
     historyApiFallback: true,//重定向
     port: 8080, //端口号

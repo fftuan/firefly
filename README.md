@@ -80,7 +80,16 @@
 
  # 关于如何让我们的网站跑起来
 
- 在命令行(cmd)里找到你clone下来的文件夹然后输入 npm i 等待安装完成后输入npm run build等待编译完成后 npm start就可以在浏览器输入localhost:8080正式浏览
+
+ 1.在命令行(cmd)里找到你clone下来的文件夹
+ 2.输入 npm i 等待安装完成
+ 3.输入npm run build等待编译完成
+ 4.npm start
+ 5.浏览器输入localhost:8080/网页名称
+
+**但是这样视频就无法看到，如果想修改视频页面的话，就要改webpack.config.js devServer 注释掉contentBase这样文件的指向就不会很迷，至于为什么，我猜是loaclhost找不到上一级**
+
+
 
  # webpack
 
