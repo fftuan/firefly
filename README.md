@@ -87,7 +87,7 @@
  4.npm start
  5.浏览器输入localhost:8080/网页名称
 
-**但是这样视频就无法看到，如果想修改视频页面的话，就要改webpack.config.js devServer 注释掉contentBase这样文件的指向就不会很迷，至于为什么，我猜是loaclhost找不到上一级**
+**但是这样视频就无法看到，如果想修改视频页面的话，就要改webpack.config.js devServer 注释掉contentBase这样文件的指向就不会很迷，至于为什么，我猜是loaclhost找不到上一级，然后直接跑起来start不需要编译一次了！**
 
 
 
