@@ -11,8 +11,9 @@ const config = {
   //入口文件
   entry: {
     play: './src/play/entry.js', //单个文件入口
-    list: './src/index/entry.js',
-    commons: ['jquery'] //公共文件
+    // list: './src/list/entry.js',
+    // index: './src/index/entry.js',
+    // commons: ['jquery'] //公共文件
   },
   //编译后输出文件
   output: {
@@ -22,14 +23,15 @@ const config = {
   },
   //本地服务器配置
   devServer: {
-    // contentBase: path.join(__dirname, "dist"), //基础引用地址
-    compress: true, //使用gzip压缩
+    //contentBase: path.join(__dirname, "dist"), //基础引用地址
+    //compress: true, //使用gzip压缩
     historyApiFallback: true,//重定向
     port: 8080, //端口号
     //host: "0.0.0.0", //允许外部访问（然而我为什么访问不了。）
     // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")],
     //多个文件夹配置方式
-    hot: true //热处理
+    hot: true, //热处理
+    inline:true
   },
   //模块化
   module: {
@@ -90,7 +92,8 @@ const config = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    new ExtractTextPlugin('static/css/[name]-[hash:8].css')//注入css样式
+    new ExtractTextPlugin('static/css/[name]-[hash:8].css'),//注入css样式
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
 

@@ -9,3 +9,5 @@ require('./css/play.css');
 require('./js/play.js');
 require('./js/send.js');
 require('./js/nav.js');
+
+console.log(2);

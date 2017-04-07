@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "rm -rf dist",
     "build": "npm run clear && webpack --progress --profile --colors --display-origins --display-chunks --display-entrypoints --display-modules --display-exclude",
-    "start":"webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot --color --inline"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "jquery": "^3.1.1",
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1",
+    "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
